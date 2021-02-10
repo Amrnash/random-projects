@@ -14,4 +14,19 @@ slides.forEach((slide, index) => {
   const slideImage = slide.querySelector("img");
   slideImage.addEventListener("dragstart", (e) => e.preventDefault());
   // Mouse Events
+  slide.addEventListener("mousedown", clickStart(index));
+  slide.addEventListener("mouseup", clickEnd);
+  slide.addEventListener("mouseleave", clickEnd);
+  slide.addEventListener("mousemove", mousemove);
 });
+// Disable context menu
+window.oncontextmenu = function (event) {
+  event.preventDefault();
+  event.stopPropagation();
+  return false;
+};
+function clickStart(index, e) {
+  currentIndex = index;
+}
+
+// utility functions

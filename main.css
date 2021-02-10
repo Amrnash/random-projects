@@ -11,15 +11,19 @@ html body {
 }
 .slider-container {
   height: 100vh;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 .slider {
+  max-height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
 }
 .slider img {
   max-width: 60%;
   max-height: 100%;
+  cursor: grab;
 }
